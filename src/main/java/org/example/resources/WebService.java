@@ -1,7 +1,10 @@
 package org.example.resources;
 
+import org.example.WebServiceApplication;
+
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import java.sql.SQLException;
 
 @Path("/api")
 public class WebService {
@@ -17,5 +20,16 @@ public class WebService {
     @Produces(MediaType.APPLICATION_JSON)
     public String sendMsg(Employee employee) {
         return "Employee added to database: " + employee.getName();
+    }
+
+    @GET
+    @Path("/employeesReport/{department}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public String getEmployeeInfo(@PathParam("department") String department){
+        try {
+            return EmployeesDB.getReport(EmployeesDB.getEmployees(WebServiceApplication.getConnection(), department));
+        } catch (SQLException e) {
+            return "SQL error";
+        }
     }
 }
