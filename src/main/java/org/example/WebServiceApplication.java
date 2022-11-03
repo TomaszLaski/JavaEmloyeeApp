@@ -14,7 +14,7 @@ import java.util.Properties;
 public class WebServiceApplication extends Application<WebServiceConfiguration> {
 
     public static Connection conn;
-    private static Connection getConnection() {
+    public static Connection getConnection() {
         String user;
         String password;
         String host;
