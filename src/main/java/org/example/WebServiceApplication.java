@@ -3,6 +3,7 @@ package org.example;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
+import org.example.resources.WebService;
 
 public class WebServiceApplication extends Application<WebServiceConfiguration> {
 
@@ -23,7 +24,7 @@ public class WebServiceApplication extends Application<WebServiceConfiguration> 
     @Override
     public void run(final WebServiceConfiguration configuration,
                     final Environment environment) {
-        // TODO: implement application
+        environment.jersey().register(new WebService());
     }
 
 }
