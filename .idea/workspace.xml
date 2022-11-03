@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="79fd63ca-3e8c-404c-a452-5e7c052f95e0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dbuser.properties" beforeDir="false" afterPath="$PROJECT_DIR$/dbuser.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/WebServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/WebServiceApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/resources/WebService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/resources/WebService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,7 +38,8 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true"
   }
 }]]></component>
   <component name="RunManager">
