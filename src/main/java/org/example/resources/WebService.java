@@ -1,12 +1,14 @@
 package org.example.resources;
 
+import io.swagger.annotations.Api;
+
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 
 import java.sql.SQLException;
 
 import static org.example.db.EmployeeDB.postEmployee;
-
+@Api("Engineering Academy Dropwizard API")
 @Path("/api")
 public class WebService {
     @GET
