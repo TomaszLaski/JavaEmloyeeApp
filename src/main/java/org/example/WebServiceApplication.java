@@ -25,7 +25,7 @@ public class WebServiceApplication extends Application<WebServiceConfiguration> 
 
         try {
             FileInputStream propsStream =
-                    new FileInputStream("employeesdb.properties");
+                    new FileInputStream("dbuser.properties");
 
             Properties props = new Properties();
             props.load(propsStream);
@@ -39,7 +39,7 @@ public class WebServiceApplication extends Application<WebServiceConfiguration> 
                         "Properties file must exist and must contain "
                                 + "user, password, and host properties.");
             conn = DriverManager.getConnection("jdbc:mysql://"
-                    + host + "/employees?allowPublicKeyRetrieval=true&useSSL=false", user, password);
+                    + host + "/employee_KacperB?allowPublicKeyRetrieval=true&useSSL=false", user, password);
             return conn;
 
         } catch (Exception e) {
