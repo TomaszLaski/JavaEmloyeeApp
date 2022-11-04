@@ -3,6 +3,8 @@ package org.example;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
+import io.federecio.dropwizard.swagger.SwaggerBundle;
+import io.federecio.dropwizard.swagger.SwaggerBundleConfiguration;
 import org.example.resources.WebService;
 
 import java.io.FileInputStream;
@@ -14,7 +16,7 @@ import java.util.Properties;
 public class WebServiceApplication extends Application<WebServiceConfiguration> {
 
     public static Connection conn;
-    private static Connection getConnection() {
+    public static Connection getConnection() {
         String user;
         String password;
         String host;
@@ -59,7 +61,12 @@ public class WebServiceApplication extends Application<WebServiceConfiguration> 
 
     @Override
     public void initialize(final Bootstrap<WebServiceConfiguration> bootstrap) {
-        // TODO: application initialization
+        bootstrap.addBundle(new SwaggerBundle<WebServiceConfiguration>() {
+            @Override
+            protected SwaggerBundleConfiguration getSwaggerBundleConfiguration(WebServiceConfiguration configuration) {
+                return configuration.getSwagger();
+            }
+        });
     }
 
     @Override
