@@ -1,9 +1,13 @@
 package org.example.resources;
 
+
+import org.example.WebServiceApplication;
 import io.swagger.annotations.Api;
+
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import java.sql.SQLException;
 
 import java.sql.SQLException;
 
@@ -29,5 +33,16 @@ public class WebService {
             return "Employee added to database: " + employee.getName();
         }
         return null;
+    }
+
+    @GET
+    @Path("/employeesReport/{department}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public String getEmployeeInfo(@PathParam("department") String department){
+        try {
+            return EmployeesDB.getReport(EmployeesDB.getEmployees(WebServiceApplication.getConnection(), department));
+        } catch (SQLException e) {
+            return "SQL error";
+        }
     }
 }
