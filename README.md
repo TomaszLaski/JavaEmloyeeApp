@@ -10,7 +10,7 @@ How to start the WebService application
 5. To connect to database you need to add login details to ./dbuser.properties both user and password in same manner (without e.g. quotation marks)
 
 ## ⚡ Technologies used inside project:
-**Swagger**, **Java**, **Mavin**, **Dropwizard**
+**Swagger**, **Java**, **Maven**, **Dropwizard**
 
 ## 🌱 Good practices used:
 To create this app we did our best to write our code using SOLID principles, KISS and DRY;
